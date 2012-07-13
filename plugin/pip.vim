@@ -3,8 +3,9 @@ if !has('python')
     finish
 endif
 
-if !has('g:pip_default_requirments')
+if !exists('g:pip_default_requirments')
     let g:pip_default_requirments = 'requirments.pip'
 endif
 
 command! -nargs=? -complete=customlist,pip#completions#command Pip call pip#command#wrapper(<q-args>)
+command! -nargs=1 PipGithub call pip#github#install(<q-args>)
