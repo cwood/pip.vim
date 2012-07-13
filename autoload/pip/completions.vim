@@ -15,6 +15,11 @@ try:
 except AttributeError:
     sub_command = None
 
+try:
+    sub_command_flags = command_parts[2]
+except (IndexError, AttributeError, KeyError):
+    sub_command_flags = None
+
 if sub_command == prefix:
     commands = command_names()
 
@@ -23,7 +28,7 @@ if sub_command == prefix:
 
     vim.command('return '+str(commands))
 
-else:
+elif not sub_command_flags:
     module = __import__('pip.commands.%s' % (sub_command),
                         fromlist=['%sCommand' % (sub_command.capitalize())])
 
