@@ -38,8 +38,5 @@ else:
         flags = [flag for flag in flags if flag.startswith(prefix)]
 
     vim.command('return'+str(flags))
-
-
-
 EOB
 endfunction
