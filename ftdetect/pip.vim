@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile *.pip setf pip
+autocmd BufRead,BufNewFile *.pip requirements.txt setf pip
