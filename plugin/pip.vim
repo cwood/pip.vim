@@ -8,5 +8,5 @@ if !exists('g:pip_default_requirments')
 endif
 
 command! -nargs=? -complete=customlist,pip#completions#command Pip call pip#command#wrapper(<q-args>)
-command! -nargs=0 PipUpdate call pip#requirements#updateall(<q-args>)
+command! -nargs=0 -range PipUpdate <line1>,<line2>call pip#requirements#update(<q-args>)
 command! -nargs=1 PipGithub call pip#github#install(<q-args>)
